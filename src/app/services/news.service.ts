@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NewsService {
   constructor(private http: HttpClient) {}
-  apikey = '3deec1c48c714feeb6093ec01faaa5a7';
+  apikey = 'your api key';
 
   getNews(params: { category: string; country: string }): Observable<any> {
     const URL = `https://newsapi.org/v2/top-headlines?country=${params.country}&category=${params.category}&apiKey=${this.apikey}`;
