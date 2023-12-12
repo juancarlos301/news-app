@@ -1,0 +1,35 @@
+<div class="jumbotron mt-5">
+  <h2 class="heading">Filter notices by country and category</h2>
+  <div class="row mt-3">
+    <div class="col-lg-8 offset-lg-2">
+      <form (ngSubmit)="searchNews()">
+        <div class="form-group">
+          <select
+            class="form-select form-control-lg"
+            name="category"
+            [(ngModel)]="categorySelected"
+          >
+            <option
+              *ngFor="let category of categories"
+              [value]="category.value"
+            >
+              {{ category.label }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <select
+            class="form-select form-control-lg"
+            name="country"
+            [(ngModel)]="countrySelected"
+          >
+            <option *ngFor="let country of countries" [value]="country.value">
+              {{ country.label }}
+            </option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block mt-3">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
